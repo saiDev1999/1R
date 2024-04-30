@@ -16,9 +16,9 @@ const ButtonComponent =()=> {
     <>
 
     {
-        addedToCart 
+        true 
     &&
-      <button>Move to cart</button>
+      <button  className="headingStyle" >Move to cart</button>
      
 
       

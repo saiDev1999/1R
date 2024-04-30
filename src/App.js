@@ -1,12 +1,11 @@
+
 import { Component } from "react"
-import ButtonComponent from "./components/functional/button/button.js"
-import ImageComponent from "./components/functional/image/image.js"
-import ListComponent from "./components/functional/list/list-component.js"
-import OrderList from "./components/functional/list/ordered-list.js"
-import IplTeamListing from "./components/functional/list/ipl/ipl-listing.js"
-import MainHeading,{Heading2 as SubHeading,Heading3 as MiniHeading } from "./components/functional/heading/headings.js"
-import Button from "./components/class/button/button.js"
-import Heading from "./components/class/heading/heading.js"
+import "./App.css"
+import Card from "./components/functional/card/card"
+import ModalComponent from "./components/functional/modal/modal"
+import NavBar from "./components/functional/navBar/navBar"
+import CircleSpinner from "./components/functional/spinners/circle-spinner"
+import TableComponent from "./components/functional/table/table"
 
 
 const App = () => {
@@ -14,13 +13,16 @@ const App = () => {
 
   return(
     <div>
-      <h2>Hello world</h2>
-      {/* <IplTeamListing/> */}
-      <MainHeading/>
-      <SubHeading/>
-      <MiniHeading/>
-      <Button/>
-      <Heading/>
+         <CircleSpinner/>
+   <NavBar/>
+   <ModalComponent/>
+   <Card/>
+   <Card/>
+   <Card/>
+   <TableComponent/>
+
+
+    
     
      
     
@@ -31,6 +33,28 @@ const App = () => {
 
 export default App
 
+
+// Taks :
+// 1. Repeat the class
+// 2. Corousel  Component
+// 3. Forms component 
+// 4. React skeleton loaders 
+// 5. Go through material UI documentation
+
+
+// 4 ways generally we use to style the react App
+
+// 1. inline styles or object styles 
+// 2. External stylesheet styles : parent , child1 , .css 
+// 3. External module styles .module.css 
+// 4. Sass type of styling or external css library styling ex :Bootstarp , ReactBootstrap ,materiakUI, AntDesign, styled components,Tailwind css
+
+
+
+// React boostarp we can configure in 2 ways
+
+// 1. CDN
+// 2. via NPM
 
 // DOM : Document object model 
 // Drawbacks in DOM :

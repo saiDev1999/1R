@@ -1,10 +1,23 @@
-
+// import "./heading.css"
+import styles from "./heading.module.css"
 
 
 
 
 const Heading1 =()=>{
-    return <h1>Hello</h1>
+    const blackColor=true
+
+    const headingStyle={
+        
+            color:"red",
+            backgroundColor:"black"
+        
+    }
+
+    return  <>
+   <h1 className={styles.myStyle}  >Hello</h1>
+      <h1   >Hello</h1>
+        </>
 }
 
 export const Heading2 =()=>{
