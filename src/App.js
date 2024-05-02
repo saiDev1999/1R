@@ -6,26 +6,92 @@ import ModalComponent from "./components/functional/modal/modal"
 import NavBar from "./components/functional/navBar/navBar"
 import CircleSpinner from "./components/functional/spinners/circle-spinner"
 import TableComponent from "./components/functional/table/table"
+import ButtonComponent from "./components/functional/button/button"
+import GreetingComponent from "./components/functional/greeting/greeting"
+import ImageComponent from "./components/functional/image/image"
 
 
 const App = () => {
 
+  const buttonArray=[
+    {
+      text:"sign up",
+      width:100,
+      height:100,
+      bgColor:"white",
+      id:1
+    },
+    {
+      text:"login",
+      width:100,
+      height:100,
+      bgColor:"white",
+      id:2
+    },
+    {
+      text:"submit",
+      width:100,
+      height:100,
+      bgColor:"white",
+      id:3
+    },
+    {
+      text:"Click me",
+      width:200,
+      height:100,
+      bgColor:"white",
+      id:4
+    },
+    {
+      text:"Click me",
+      width:200,
+      height:100,
+      bgColor:"white",
+      id:5
+    },
+    
+  ]
+
 
   return(
     <div>
-         <CircleSpinner/>
-   <NavBar/>
-   <ModalComponent/>
-   <Card/>
-   <Card/>
-   <Card/>
-   <TableComponent/>
+      <GreetingComponent >
+      <ImageComponent
+       src={"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}
+      
+      />
+      <h1>Hai ravi how are you ? </h1>
+      </GreetingComponent>
+      <GreetingComponent >
+      <ImageComponent
+      
+      src={"https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"}
+      />
+      <h1>Hai sharath how are you ? </h1>
+      </GreetingComponent>
 
 
-    
-    
-     
-    
+       
+       {/* {
+        buttonArray.map(eachbutton=>{
+          const{text,width,height,bgColor,id}=eachbutton
+          return(
+            <ButtonComponent 
+            key={id}
+            text={text}  bgColor={bgColor} 
+            buttonProperties={
+              {
+                width:width,
+                height:height
+              }
+            }
+            
+            
+            />
+          )
+        })
+       } */}
+
     </div>
  
   )
