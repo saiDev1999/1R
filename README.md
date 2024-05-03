@@ -1,55 +1,43 @@
 
 
-
-
 <!-- Tasks:
 1. Repeat the class
-2. Increment each product using state concept in react 
-3. Timer in class based components -->
-
-<!-- State : State is an object in react which holds the information of the component 
-State is mutable 
-State is Private to a component 
-State holds the component data 
-
-0 -> State 
-over the  time change the state when user interacts 
-Example : Counter , Initial 0 , i can change count by user interactions  -->
-
-<!-- presentation layer -> static web page 
-Container layer -> dynamic web page
+2. Replace today class with array of objects (TODO  based on ID)
+3. Style the class topics , TODO 
+4. Prepare for git hub , tasks , till date topics  -->
 
 
 
 
 
-before 2018 :
-1. Container layer -> dynamic web page -> class based component 
-2. presentation layer => functional based components
+Human life cycle :
+Earth 
 
-2018 React version 16.8 , React Hooks were introduced in react functional based components
-
-after 2018 
-
-1. Container layer -> functional based components or class based components 
-
-React suggesting always funtional based components  -->
+1. Birth stage 
+2. Survival stage
+3. Expiry stage
 
 
-Container layer --> data layer --> State 
 
-State in class based components :
+Component life cycle : Life cycle of components tells us how elements behaving from creation 
+to removal from dom
+Dom
 
+1. Mounting stage 
 
-State creation in class based components can be done in 2 ways 
-1. Object way of creation
-2. Constructor way of creation
+    1. Constructor : To create and initialize the state in class component , we need constructor
 
+    2. Render : To insert the jsx inside the dom we actually need this method
 
-To change the state in react class based components we must use setState method
-setState will accepts 2 args
-1. Object or  Call back function 
-2. Call back function  
+    3. Component did mount : it is a method where we can perform the side effects 
+    side effects : 
+    1. Http calls (Api calls) when page load
+    2. dom manipulations when page load
+    3. Timers trigger when page load
+    4. Event listeners when page load
+ Note : Component did mount will runs only once in a life cycle 
 
-when we use setState method component will re-render and updates the layout 
-state changes are asynchrnous
+    4.  GetDerivedStateFromProps
+
+2. Updating stage 
+3. UnMounting stage

@@ -1,9 +1,9 @@
-import Counter from "./components/class/counter/counter"
+import TodoComponent from "./components/class/todo/todo"
 
 const App = () => {
   return(
     <div>
-    <Counter/>
+<TodoComponent/>
     </div>
  
   )
