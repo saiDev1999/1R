@@ -9,7 +9,7 @@ class Button extends Component{
            
            {
             true && 
-            <button>hello</button>
+            <button >hello</button>
            }
            </>
         )

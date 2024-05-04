@@ -1,37 +1,20 @@
 
+const ButtonComponent =(props)=> {
+  console.log(props,"props")
 
-// function ButtonComponent(){
-//   return(
-//     <button>Click me</button>
-//   )  
-// }
-// export default ButtonComponent
+ 
 
-import OrderList from "../list/ordered-list"
-
-const ButtonComponent =()=> {
-    const addedToCart=0
+  const {text,bgColor,buttonProperties:{width,height}}=props
 
   return(
-    <>
-
-    {
-        addedToCart 
-    &&
-      <button>Move to cart</button>
-     
-
-      
-        
-
-    }
-    
+    <>  
+      <button style={{
+        backgroundColor:bgColor,
+        width:width,
+        height:height
+      }} >{text}</button> 
     </>
   )
-
-
-
-
     // if(login){
     //     return(
     //         <button>Click me</button> 
