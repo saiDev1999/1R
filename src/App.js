@@ -1,9 +1,11 @@
+import Mounting from "./components/class/lifecycle/mounting/mounting"
 import TodoComponent from "./components/class/todo/todo"
 
 const App = () => {
   return(
     <div>
-<TodoComponent/>
+<Mounting  color={"green"}  />
+
     </div>
  
   )
