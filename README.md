@@ -1,16 +1,21 @@
 
+
+
+
+7th May Task :
+1. Repeat the class
+2. Populate the buttons based on the size of response, 
+3. Each button should be numbered , when we click on particular number ,populate the data in UI
+4. fetch and axios
+5. Class based component and functional based difference
+6. take a corousel , by default 3 , give add new button , by adding new dummy image has to add to the corousel
+
 6th may Tasks:
 1. Repeat the class 
 2. Hit the category api using axios (async and await)
 3. Populate the category button on th UI
 4. Add interaction to the button (filters via button)
 5. All button for showing all the list
-
-
-
-
-
-6 may :
 
 1. Fetch vs Axios
 
@@ -73,9 +78,14 @@ Dom
 1. render
 2. GetDerivedStateFromProps
 3. component did update : To cause or perform side effects in the updating phase
-4. shouldComponentUpdate 
-5. getSnapShotBeforeUpdate
+4. shouldComponentUpdate : it is internally used in pure component 
+in general a component has to update when state or prop changes
+if state or props doesn't change , we should not update the component
+5. getSnapShotBeforeUpdate: To get the state or props of the previous cycle
 
 
-3. UnMounting stage
+3. UnMounting stage :
+whenever component removed from the dom , we call it as UnMounting stage
+component by default can have some memory leaks or data leaks ,
+we should prevent these data leaks , we can use Component will unmount 
 1. Component will unmount 
