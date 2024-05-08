@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Child from "./child";
 
 class Counter extends Component {
   state = {
@@ -51,6 +52,7 @@ class Counter extends Component {
   };
 
   render() {
+    console.log("parent re-render")
     const { isSubscribe, subscribeText, subscribedText, count } = this.state;
     return (
       <>
@@ -75,6 +77,7 @@ class Counter extends Component {
             <button onClick={() => this.changeAction("RESET")}>Reset</button>
           </>
         )}
+        <Child  count={this.state.count}  />
       </>
     );
   }
