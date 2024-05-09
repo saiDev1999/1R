@@ -1,3 +1,14 @@
+
+Tasks :
+
+0. repeat the class 
+1. Timer using useState in react
+2. Todo (CRUD) , array of string or array of objects 
+3. card transitions in react
+
+
+
+
 Drawbacks of using class based component for functional layer 
 1. More boiler plate of code
 2. This keyword can be confusing
@@ -58,6 +69,6 @@ const -> immutability of state , to change the state we must use updaterFunction
 
 
  Lifting state up: 
- 
+
  Lifting state up is a technique used in React to share state between multiple components. Instead of each component having its own local state, the state is lifted up to their closest common ancestor. This common ancestor then passes the state down to the components through props
 
