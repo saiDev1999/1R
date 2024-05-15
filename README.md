@@ -1,74 +1,68 @@
 
-Tasks :
-
-0. repeat the class 
-1. Timer using useState in react
-2. Todo (CRUD) , array of string or array of objects 
-3. card transitions in react
 
 
 
+Controlled component :
 
-Drawbacks of using class based component for functional layer 
-1. More boiler plate of code
-2. This keyword can be confusing
-3. Tasks will be splitted to different lifecycles 
-4. Code cannot be run from top to bottom , methods will invoke based on life cycle
-
-
-2018 before class 
-2018 after functional -> Hooks , 16.8 Version
+1. take the general form which contains inputs
+2. For input we will take separate state
+3. bind the state with the input using value attribute
+4. to control each input , we will attach onChange(attribute) handler for the inputs
+6. collect the input value using event.target.value
 
 
-Hooks can replace the life cycle methods in class components 
-
-Hooks : Hooks let us use of state and other react features (lifecycle methods)  without writing the class 
-
-Rules of Hooks :
-1. Hooks must always used in functional based components
-2. Hooks must always call at the top of the functional components , and must import from react 
-3. Hooks cannot be conditional , hooks cannot be used in loops 
+7. we can apply validations (client side)
+8. submit to server via API 
 
 
-Examples : 
-1. useState hook
-2. useEffect hook
-3. useRef hook 
-4. useCallback hook 
-5. useReducer hook 
-6. useMemmo hook
-7. useContext hook
-8. Custom hooks 
+Tasks:
+1. Repeat the class 
+2. Create the registration form
+3. create a fake local json db 
+4. Login form UI with proper fonts and styles
+5. How to apply google fonts to react app
 
 
-useState :
-useState is a hook in functional based components which creates and manages the state (data)
-
-replica : constructor and setState in class based components
-
-syntax :
-1. useState will accept the initial argument of  any data type
-
-useState(0)
-
-2. useState will retun an array 
-
-const data = useState(0)
-
-3. useState array will contains 2 elements , 1st elememt -> current state , 2nd element -> updater function
-
-const [currentState,updaterFunction] = useState(0)
-
-const -> immutability of state , to change the state we must use updaterFunction
 
 
- const [count,setCount]=useState(0)
- const [isSubscribe,setIsSubscribe]=useState(false)
- const[products,setProducts]=useState([])
- const [product,setProduct]=useState({})
 
 
- Lifting state up: 
 
- Lifting state up is a technique used in React to share state between multiple components. Instead of each component having its own local state, the state is lifted up to their closest common ancestor. This common ancestor then passes the state down to the components through props
 
+
+
+
+
+
+<!-- Create Ref  -->
+
+Forms in React:
+
+Forms in React can be handled by 2 ways 
+
+1. Uncontrolled components
+
+In Uncontrolled components state or data control will be done by dom
+
+in Uncontrolled components field validations were not possible
+
+
+
+
+
+2. Controlled components
+
+In Controlled components state control will be done by React
+
+in Controlled components field validations were possible
+
+
+useRef : useRef is a hook in funtional based components , it allows us to access the dom directly
+useRef doesn't cause re-render when updated
+useRef is also used to persists the values between renders
+
+
+There are 2 types of validations 
+
+1. server validations 
+2. client validations
