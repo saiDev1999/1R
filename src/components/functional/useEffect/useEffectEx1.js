@@ -17,6 +17,20 @@ const UseEffect1 =()=>{
     },[])
 
 
+    useEffect(()=>{
+        window.addEventListener("mousemove",handleMouseMove)
+        return ()=>{
+            // we can prevent the memory leaks when component removed from dom 
+            window.removeEventListener("mousemove",handleMouseMove)
+
+        }
+    },[])
+
+    const handleMouseMove=(event)=>{
+        console.log(event)
+    }
+
+
    //useEffect will trigger every when array value changes 
     useEffect(()=>{
         document.title=`Count ${count}`
