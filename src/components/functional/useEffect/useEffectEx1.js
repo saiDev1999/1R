@@ -1,6 +1,8 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { checkArrayLengthExists, checkObjectEmpty } from "../../../utills/functions"
+import ImageComponent from "../image/image"
+import { Link } from "react-router-dom"
 
 
 const UseEffect1 =()=>{
@@ -17,52 +19,52 @@ const UseEffect1 =()=>{
     },[])
 
 
-    useEffect(()=>{
-        window.addEventListener("mousemove",handleMouseMove)
-        return ()=>{
-            // we can prevent the memory leaks when component removed from dom 
-            window.removeEventListener("mousemove",handleMouseMove)
+    // useEffect(()=>{
+    //     window.addEventListener("mousemove",handleMouseMove)
+    //     return ()=>{
+    //         // we can prevent the memory leaks when component removed from dom 
+    //         window.removeEventListener("mousemove",handleMouseMove)
 
-        }
-    },[])
+    //     }
+    // },[])
 
-    const handleMouseMove=(event)=>{
-        console.log(event)
-    }
+    // const handleMouseMove=(event)=>{
+    //     console.log(event)
+    // }
 
 
-   //useEffect will trigger every when array value changes 
-    useEffect(()=>{
-        document.title=`Count ${count}`
-        fetchEachTodo()
-    },[count])
+//    //useEffect will trigger every when array value changes 
+//     useEffect(()=>{
+//         document.title=`Count ${count}`
+//         fetchEachTodo()
+//     },[count])
  
     // to fetch all todos from server 
     const fetchData = async()=>{
-        const result= await axios.get("https://jsonplaceholder.typicode.com/todos")
+        const result= await axios.get("https://dummyjson.com/products")
         console.log('result: ', result);
         if(result.status===200){
-    setTodos(result.data)
+    setTodos(result.data.products)
 }        
       
 
     }
 
     //this function is to fetch todo based on the current count
-    const fetchEachTodo = async()=>{
+//     const fetchEachTodo = async()=>{
 
-        const result= await axios.get(`https://jsonplaceholder.typicode.com/todos/${count}`)
-        console.log('result: ', result);
-        if(result.status===200){
-            setEachTodo(result.data)
+//         const result= await axios.get(`https://jsonplaceholder.typicode.com/todos/${count}`)
+//         console.log('result: ', result);
+//         if(result.status===200){
+//             setEachTodo(result.data)
     
-}  
+// }  
 
-    }
+//     }
    
-    const handleIncrement=()=>{
-        setCount(count+1)
-    }
+//     const handleIncrement=()=>{
+//         setCount(count+1)
+//     }
    
 
 
@@ -72,7 +74,7 @@ const UseEffect1 =()=>{
         <>
         <h2>Use Effect example</h2>
 
-      {
+      {/* {
         checkObjectEmpty(eachTodo) ?<>
         
         <h3>{eachTodo.title}</h3>
@@ -81,10 +83,10 @@ const UseEffect1 =()=>{
         <h4>No data</h4>
   
 
-      }
+      } */}
 
-        <h3>{count}</h3>
-        <button onClick={handleIncrement} >Count increment</button>
+        {/* <h3>{count}</h3>
+        <button onClick={handleIncrement} >Count increment</button> */}
 
         {
             checkArrayLengthExists(todos) ?
@@ -94,6 +96,13 @@ const UseEffect1 =()=>{
                     return(
                         <React.Fragment key={eachTodo.id}>
                         <h3>{eachTodo.title}</h3>
+                        <ImageComponent  src={eachTodo.thumbnail}   />
+                        <button>
+
+                            <Link     to={`/${eachTodo.brand}/${eachTodo.id}`}    >
+                            Click to view product
+                            </Link>
+                        </button>
                         </React.Fragment>
                     )
                 })
