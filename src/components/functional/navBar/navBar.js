@@ -8,10 +8,11 @@ const NavBar = ()=>{
     const {name} = useContext(userInfo)
     const  {
       darkMode,
-      count
+      count,
+      currentState
   
     }=useContext(themeInfo)
-    // console.log('userInformation: ', userInformation);
+    console.log('currentState: ', currentState);
 
 
     const linkStyle={
@@ -31,7 +32,7 @@ const NavBar = ()=>{
     <li className="nav-item nav-link">
 
       <Link  to={"/"} style={linkStyle}  >
-      {name}
+      {currentState.name}
       </Link>
 
   
@@ -51,7 +52,7 @@ const NavBar = ()=>{
       </li>
       <li className="nav-item nav-link">
         <Link to={"/blog"} style={linkStyle} >
-        Cart {count}</Link>
+        Cart {count} usereducer count {currentState.count} </Link>
       </li>
      
     </ul>

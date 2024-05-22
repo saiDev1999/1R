@@ -6,26 +6,38 @@ import SettingScreen from '../screens/setting-screen'
 import BlogScreen from '../screens/blog-screen'
 import InvalidScreen from '../screens/invalid-screen'
 import ProductDetails from '../screens/productDetail'
+import { type } from '@testing-library/user-event/dist/type'
 
 
 export const userInfo=createContext()
 export const themeInfo=createContext()
 
 
-const reducerFn=(state,action)=>{
+const initialState={
+  count:0,
+  name:"sai",
+  designation:"",
+  subjects:["react","angular"]
+}
+
+
+const reducerFn = (state,action)=>{
 
   switch(action.type){
-    case "INCREMENT_ACTION":
+    case "INCREMENT":
       return {...state,count:state.count+1}
+      case "DECREMENT":
+        return {...state,count:state.count-1}
+        case "CHANGE_NAME":
+          return {...state,name:"vijay"}
+          case "ADD_SUBJECT":
+            return {...state,subjects:[...state.subjects,action.payload]}
     default :
     return state
   }
 
 }
 
-const initialState={
-  count:0
-}
 
 
 function NavigationStack() {
@@ -37,18 +49,46 @@ function NavigationStack() {
   })
   const[darkMode,setDarkMode]=useState(true)
   const [count,setCount]=useState(0)
-  const [currentState,dispatch]=useReducer(reducerFn,initialState)
+
+  const[currentState,dispatch]=useReducer(reducerFn,initialState)
+
 
   const handleDarkLightModes=()=>{
     setDarkMode(!darkMode)
   }
 
-  const incrementAction =()=>{
+  const handleIncrement =()=>{
     dispatch({
-      type:"INCREMENT_ACTION"
+      type:"INCREMENT"
+    })
+    dispatch({
+      type:"CHANGE_NAME"
+    })
 
+  }
+
+  const handleDecrement =()=>{
+    dispatch({
+      type:"DECREMENT"
+    })
+
+  }
+
+  const handleChangeName=()=>{
+    dispatch({
+      type:"CHANGE_NAME"
+    })
+
+  }
+
+  const subjectAdd=(subject)=>{
+    dispatch({
+      type:"ADD_SUBJECT",
+      payload:subject
     })
   }
+
+ 
   const incrementCounter =(value=1)=>{
     setCount(count+value)
   }
@@ -65,10 +105,11 @@ function NavigationStack() {
     handleDarkLightModes,
     incrementCounter,
     count,
-    incrementAction,
-    currentState
-
-
+    currentState,
+    handleIncrement,
+    handleDecrement,
+    handleChangeName,
+    subjectAdd
   }
 }    >
   <userInfo.Provider    value={username}  >

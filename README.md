@@ -27,6 +27,19 @@ useReducer will return array which contains 2 values
 
 const [CurrentState,dispatchFn]=useReducer(reducerFn,initialState)
 
+action-> action is an object which denotes what to happen 
+{
+    type:"INCREMENT"
+}
+{
+    type:"DECREMENT"
+}
+
+{
+    type:"CHANGE_NAME"
+}
+dispatchFn --> it will accept object (action)
+
 reducerFn: this is the pure function which manipulates the state based on the action
 dispatchFn: it will accept the object which denotes type of action
 
