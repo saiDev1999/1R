@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import NavBar from '../components/functional/navBar/navBar'
 import { themeInfo } from '../navigation/navigation-stack'
+import UseMemoExample from '../components/functional/useMemo/useMemo'
 
 function AboutScreen() {
   const {count,currentState}=useContext(themeInfo)
@@ -19,6 +20,8 @@ function AboutScreen() {
           </li>)
         }
               </ol>
+
+              <UseMemoExample/>
     </div>
   )
 }
