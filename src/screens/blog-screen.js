@@ -2,10 +2,13 @@ import React from 'react'
 import NavBar from '../components/functional/navBar/navBar'
 import UseCallbackExample from '../components/functional/useCallback/useCallback'
 import useCounter from '../components/functional/customHooks/useCounter'
+import useAxios from '../components/functional/customHooks/useAxios'
 
 function BlogScreen() {
   const[age,incrementAge,decrementAge,resetAge]=useCounter(100,1)
   const[salary,incrementSalary,decrementSalary,resetSalary]=useCounter(1000,1000)
+  const[products,loading,error]=useAxios("https://fakestoreapi.com/products")
+  console.log(products,"productsproducts")
   return (
     <div>
                <NavBar/>
