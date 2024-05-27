@@ -1,84 +1,80 @@
-
-
-
-
-
-
-
-
-
-
 Tasks :
+
 1. Repeat the class
-2. Create a custom for internet handing 
-3. Research on design patterns for react
-4. Take a button , On click on button generate the circles
-5. For circle give default color white , by clicking on particular circle , turn color to black , show the count of number colored circles
+2. Repeat all the class code
+3. Push to git and configure
+4. Take few actions and reducer ex: CHANGE_PROFILE_NAME, ADDRESS_CHANGE
 
+5. Props
+6. Context api
+7. Redux :
 
+Redux :
+Redux is a third party js library which is used to manage the state globally
+Redux is predictable state container for managing state in js apps
 
-custom hooks in react:
+Redux contains 3 main core principles
 
-Custom hooks are user defined hooks, which makes us to extract the common functuality
-and resuing in multiple components
-custom hooks are general JS functions which contains the logic part
-custom hooks are designed using the predefined hooks
+1. Actions
+2. Reducers
+3. Store
 
+4. Actions: Actions are objects , which tells what to happen to the application state
+   Actions must contain type property , payload is option property
 
-Target :
-Create a hook for common functuality or logic like 
-counter
+{
+type:"BUY_BOOK",
+payload:2
+}
 
+{
+type:"RETURN_BOOK",
+payload:2
+}
 
+1. BUY_BOOK
+2. RETURN_BOOK
 
+Action creators : It is the function which returns the action
 
+const buyBookFunction = () =>{
+return {
+type:"RETURN_BOOK",
+payload:2
+}
+}
 
+const initialState={
+bookCount:100
+}
 
+Reducers : It is pure function which changes or manipulates the state based on the action
 
+const reducer = (initialState,action)=>{
 
+switch(action.type){
+case "BUY_BOOK"
+return {...initialState,bookCount:initialState.bookCount-1}
+default :
+return state
+}
 
-Optimization techniques :
+}
 
-1. Using key prop when loading larger amount of data
-2. Using React.Fragments as a shared parent
-3. useMemo usage for memorizing the value
-4. React.memo for skipping re-renderings
-5. useCallback for memorizing the function
-6. Lazy loading when loading huge data
+3. Store: Store is centralized place where our application data can be stored
 
+Flux contains the multiple stores
 
+Redux contains the single store
 
+To change the state in redux we must dispatch the action
 
-HOC:
-A component passed as argument to other component, this will results in reusing of
-functional logic
+React-Redux is third party library which links react nd redux for state communication and manipulation
 
+1. UseSelector : useSelector is a react-redux hook , which enables us to extract the data
+   or redux state to the react layer
+   redux - react
 
-React.memo:
+2. useDispatch : useDispatch is a react-redux hook , which enables us to trigger an action
 
-React.memo is HOC(Higher order components) Pattern 
-React.memo is like pure component in react class based component
- sReact.memokips the unnecassary re-renderings , it gets re-render only when state 
-or prop changes
-
-
-
-
-
-
-
-
-
-useCallback:
-
-useCallback is hook in functional based components,
-it is memorization in react , which allows us to memorize the function with out 
-recreating of a function
-
-
-syntax :
-
-useCallback(callbackFn,array)
-callbackFn -> Need to memorize 
-array -> include the values in which function has to recreate 
-
+react-redux

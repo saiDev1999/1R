@@ -1,25 +1,20 @@
-import { Component } from "react"
-import NavigationStack from "./navigation/navigation-stack"
+import { Component } from "react";
+import NavigationStack from "./navigation/navigation-stack";
+import CircleGenerator from "./components/functional/circle/circleGenerator";
 
 class App extends Component {
-  state={
-    color:"red"
-  }
+  state = {
+    color: "red",
+  };
 
-   changeColor=()=>{
+  changeColor = () => {
     this.setState({
-      color:"blue"
-    })
-   }
-   render(){
-    return(
-<NavigationStack/>
-   
-    )
-
-   }
- 
+      color: "blue",
+    });
+  };
+  render() {
+    return <NavigationStack />;
+  }
 }
 
-export default App
-
+export default App;
