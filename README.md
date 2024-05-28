@@ -1,3 +1,8 @@
+compose with devTools :
+
+https://github.com/zalmoxisus/redux-devtools-extension?tab=readme-ov-file
+follow 1.3 step
+
 Redux Thunk :
 Redux thunk is a third party library which enables us to dispatch multiple actions instead of single action
 
