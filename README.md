@@ -4,7 +4,11 @@ https://github.com/zalmoxisus/redux-devtools-extension?tab=readme-ov-file
 follow 1.3 step
 
 Redux Thunk :
+
 Redux thunk is a third party library which enables us to dispatch multiple actions instead of single action
+
+With in thunk we can async calls
+Thunk enables us to return a function instead of object
 
 Redux Thunk is a middleware(react-redux)
 
