@@ -3,11 +3,12 @@ import NavBar from "../components/functional/navBar/navBar";
 import { useSelector } from "react-redux";
 
 function BlogScreen() {
-  const { bookCount } = useSelector((state) => state);
+  const reduxState = useSelector((state) => state);
+  console.log("reduxState: ", reduxState);
   return (
     <div>
       <NavBar />
-      <h1>Book count {bookCount} </h1>
+      <h1>Book count </h1>
     </div>
   );
 }

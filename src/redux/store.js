@@ -1,4 +1,4 @@
 import { legacy_createStore } from "redux";
-import { reducerBookFunction } from "./reducer";
+import { singleReducer } from "./singleReducer";
 
-export const reduxStore = legacy_createStore(reducerBookFunction);
+export const reduxStore = legacy_createStore(singleReducer);

@@ -1,3 +1,19 @@
+Redux Thunk :
+Redux thunk is a third party library which enables us to dispatch multiple actions instead of single action
+
+Redux Thunk is a middleware(react-redux)
+
+combineReducer :
+combineReducer is a method where we can wrap all the reducer into a single reducer
+
+combineReducer(
+{
+profile:profileReducer,
+books:bookReducer,
+products:productReducer
+}
+)
+
 Tasks :
 
 1. Repeat the class
