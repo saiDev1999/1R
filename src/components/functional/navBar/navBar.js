@@ -1,65 +1,54 @@
-import { useContext } from "react"
-import { Link } from "react-router-dom"
-import { themeInfo, userInfo } from "../../../navigation/navigation-stack"
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { themeInfo, userInfo } from "../../../navigation/navigation-stack";
+import { useSelector } from "react-redux";
 
+const NavBar = () => {
+  const darkTheme = false;
+  const { name } = useContext(userInfo);
+  const { darkMode, count, currentState } = useContext(themeInfo);
+  const { cart } = useSelector((state) => state.cart);
+  console.log("currentState: ", currentState);
 
-const NavBar = ()=>{
-    const darkTheme=false
-    const {name} = useContext(userInfo)
-    const  {
-      darkMode,
-      count,
-      currentState
-  
-    }=useContext(themeInfo)
-    console.log('currentState: ', currentState);
+  const linkStyle = {
+    textDecoration: "none",
+    color: darkMode ? "white" : "black",
+  };
 
+  return (
+    <nav
+      class={
+        darkMode
+          ? "navbar navbar-expand-sm bg-dark navbar-dark"
+          : "navbar navbar-expand-sm bg-light navbar-light"
+      }
+    >
+      <div className="container-fluid">
+        <ul className="navbar-nav">
+          <li className="nav-item nav-link">
+            <Link to={"/"} style={linkStyle}>
+              {currentState.name}
+            </Link>
+          </li>
+          <li className="nav-item nav-link">
+            <Link to={"/about"} style={linkStyle}>
+              About
+            </Link>
+          </li>
+          <li className="nav-item nav-link">
+            <Link to={"/settings"} style={linkStyle}>
+              Settings
+            </Link>
+          </li>
+          <li className="nav-item nav-link">
+            <Link to={"/blog"} style={linkStyle}>
+              Cart {cart.length}{" "}
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
 
-    const linkStyle={
-      textDecoration:"none",
-      color:darkMode?"white":"black"
-    }
-
-   
-
-    return(
-        <nav 
-        class={darkMode ?"navbar navbar-expand-sm bg-dark navbar-dark":"navbar navbar-expand-sm bg-light navbar-light"}
-        
-        >
-  <div className="container-fluid">
-    <ul className="navbar-nav">
-    <li className="nav-item nav-link">
-
-      <Link  to={"/"} style={linkStyle}  >
-      {currentState.name}
-      </Link>
-
-  
-
-      </li>
-      <li className="nav-item nav-link"   >
-        <Link to={"/about"}  style={linkStyle} >
-        About
-        </Link>
-    
-      </li>
-      <li className="nav-item nav-link">
-        <Link  to={"/settings"}  style={linkStyle} >
-        Settings
-        </Link>
-   
-      </li>
-      <li className="nav-item nav-link">
-        <Link to={"/blog"} style={linkStyle} >
-        Cart {count} usereducer count {currentState.count} </Link>
-      </li>
-     
-    </ul>
-  </div>
-</nav>
-
-    )
-}
-
-export default NavBar
+export default NavBar;

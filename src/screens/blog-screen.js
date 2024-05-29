@@ -1,31 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import NavBar from "../components/functional/navBar/navBar";
-import { useDispatch, useSelector } from "react-redux";
-import { productListingAction } from "../redux/products/action";
+import "./cartStyles.css";
+import { deleteFromCartAction } from "../redux/cart/action";
 
 function BlogScreen() {
-  const { products, loading } = useSelector((state) => state);
+  const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(productListingAction());
-  }, []);
+
+  const incrementQuantity = (productId) => {
+    // dispatch({ type: 'INCREMENT_QUANTITY', payload: productId });
+  };
+
+  const decrementQuantity = (productId) => {
+    // dispatch({ type: 'DECREMENT_QUANTITY', payload: productId });
+  };
+
+  const deleteFromCart = (id) => {
+    dispatch(deleteFromCartAction(id));
+  };
+
   return (
-    <div>
+    <div className="cart-container">
       <NavBar />
-      <h1>Book count </h1>
-      {loading ? (
-        <h2>...please wait</h2>
-      ) : (
-        <>
-          {products.products?.map((each) => {
-            return (
-              <>
-                <h3>{each.title}</h3>
-              </>
-            );
-          })}
-        </>
-      )}
+      <h1>Cart count {cart.length}</h1>
+
+      {cart.map((eachProduct) => (
+        <div className="cart-item" key={eachProduct.id}>
+          <img src={eachProduct.thumbnail} alt={eachProduct.title} />
+          <div className="cart-item-details">
+            <h3>{eachProduct.title}</h3>
+            <p>{eachProduct.description}</p>
+            <p>Price: ${eachProduct.price}</p>
+          </div>
+          <div className="cart-item-controls">
+            <button onClick={() => deleteFromCart(eachProduct.id)}>
+              Delete from cart
+            </button>
+            {/* <button
+              onClick={() => decrementQuantity(eachProduct.id)}
+              disabled={eachProduct.quantity <= 1}
+            >
+              -
+            </button> */}
+            <span className="cart-item-quantity">{eachProduct.quantity}</span>
+            {/* <button onClick={() => incrementQuantity(eachProduct.id)}>+</button> */}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

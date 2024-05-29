@@ -1,3 +1,7 @@
+Home screen api :
+
+show the products
+
 compose with devTools :
 
 https://github.com/zalmoxisus/redux-devtools-extension?tab=readme-ov-file
